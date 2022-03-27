@@ -8,19 +8,19 @@ function App() {
     id: 1,
     text: 'doctor apointment',
     day: 'Feb 5th at 02:30pm',
-    remainder: true,
+    reminder: true,
 },
 {
     id: 2,
     text: 'meeting',
     day: 'Mar 2nd at 01:00pm',
-    remainder: true,
+    reminder: true,
 },
 {
     id: 3,
     text: 'Birthday',
     day: ' Mar 22nd at 08:00pm',
-    remainder: false,
+    reminder: false,
 },
 ])
 
@@ -30,10 +30,17 @@ function App() {
     setTasks(tasks.filter(task => task.id !== id))
   }
 
+// TOGGLE REMINDER FUNCTION
+
+  function handleToggleReminder(id) {
+    setTasks(tasks.map(task => task.id === id ? {...task, reminder: !task.reminder} : task))
+  } 
+
+
   return (
     <Container>
       <Header />
-      <Tasks tasks={tasks} onDelete={handleDelete}/>
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={handleDelete} onToggle={handleToggleReminder} /> : 'No tasks planned!'}
     </Container>
   );
 }

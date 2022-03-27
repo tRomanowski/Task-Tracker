@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import {FaTimes} from 'react-icons/fa';
 
-export default function Task({task, onDelete}) {
+export default function Task({task, onDelete, onToggle}) {
   return (
-    <TaskCard>
+    <TaskCard onDoubleClick={() => onToggle(task.id)}>
         <h3>{task.text} <FaTimes onClick={() => onDelete(task.id)} style={{ color: 'red', cursor:'pointer'}}/></h3>
         <p>{task.day}</p>
     </TaskCard>
