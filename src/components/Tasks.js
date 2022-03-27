@@ -1,13 +1,13 @@
 import Task from "./Task"
 import styled from "styled-components"
 
-export default function Tasks({tasks}) {
+export default function Tasks({tasks, onDelete}) {
  
 
   return (
     <StyledList>
         {tasks.map(task => {
-            return (<li key={task.id}><Task task={task}/></li>)
+            return (<li key={task.id}><Task onDelete={onDelete} task={task}/></li>)
         })}
     </StyledList>
   )

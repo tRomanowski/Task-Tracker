@@ -4,7 +4,7 @@ import Tasks from './components/Tasks';
 import { useState } from "react";
 
 function App() {
-  const [tasks, setTask] = useState([{
+  const [tasks, setTasks] = useState([{
     id: 1,
     text: 'doctor apointment',
     day: 'Feb 5th at 02:30pm',
@@ -24,10 +24,16 @@ function App() {
 },
 ])
 
+// DELETE FUNCTION
+
+  function handleDelete(id) {
+    setTasks(tasks.filter(task => task.id !== id))
+  }
+
   return (
     <Container>
       <Header />
-      <Tasks tasks={tasks}/>
+      <Tasks tasks={tasks} onDelete={handleDelete}/>
     </Container>
   );
 }
