@@ -63,10 +63,10 @@ body {
 //   padding: 10px 20px;
 //   cursor: pointer;
 // }
-
+/* 
 .task.reminder {
   border-left: 5px solid green;
-}
+} */
 
 // .task h3 {
 //   display: flex;
@@ -74,15 +74,15 @@ body {
 //   justify-content: space-between;
 // }
 
-.add-form {
+/* .add-form {
   margin-bottom: 40px;
-}
+} */
 
-.form-control {
+/* .form-control {
   margin: 20px 0;
-}
+} */
 
-.form-control label {
+/* .form-control label {
   display: block;
 }
 
@@ -92,22 +92,22 @@ body {
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
-}
+} */
 
-.form-control-check {
+/* .form-control-check {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+} */
 
-.form-control-check label {
+/* .form-control-check label {
   flex: 1;
 }
 
 .form-control-check input {
   flex: 2;
   height: 20px;
-}
+} */
 
 footer {
   margin-top: 30px;
