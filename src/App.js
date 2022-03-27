@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Tasks from './components/Tasks';
 import { useState } from 'react';
 import AddTask from './components/AddTask';
+import { nanoid } from 'nanoid';
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -26,6 +27,13 @@ function App() {
     },
   ]);
 
+  // ADD TASK
+
+  function addTask(task) {
+    const newTask = { id: nanoid(), ...task };
+    setTasks([...tasks, newTask]);
+  }
+
   // DELETE FUNCTION
 
   function handleDelete(id) {
@@ -45,7 +53,7 @@ function App() {
   return (
     <Container>
       <Header />
-      <AddTask />
+      <AddTask onAddTask={addTask} />
       {tasks.length > 0 ? (
         <Tasks
           tasks={tasks}

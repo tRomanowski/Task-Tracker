@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 * {
   box-sizing: border-box;
@@ -52,10 +51,10 @@ body {
 //   transform: scale(0.98);
 // }
 
-.btn-block {
+/* .btn-block {
   display: block;
   width: 100%;
-}
+} */
 
 // .task {
 //   background: #f4f4f4;
