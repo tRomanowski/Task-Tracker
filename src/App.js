@@ -1,10 +1,33 @@
 import Header from './components/Header';
 import styled from 'styled-components';
+import Tasks from './components/Tasks';
+import { useState } from "react";
 
 function App() {
+  const [tasks, setTask] = useState([{
+    id: 1,
+    text: 'doctor apointment',
+    day: 'Feb 5th at 02:30pm',
+    remainder: true,
+},
+{
+    id: 2,
+    text: 'meeting',
+    day: 'Mar 2nd at 01:00pm',
+    remainder: true,
+},
+{
+    id: 3,
+    text: 'Birthday',
+    day: ' Mar 22nd at 08:00pm',
+    remainder: false,
+},
+])
+
   return (
     <Container>
       <Header />
+      <Tasks tasks={tasks}/>
     </Container>
   );
 }

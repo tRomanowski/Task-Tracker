@@ -6,9 +6,13 @@ export default function Header({ title }) {
   return (
     <StyledHeader>
       <h1>{title}</h1>
-      <Button title='Add'></Button>
+      <Button color='green' title='Add' onClick={onClick}></Button>
     </StyledHeader>
   );
+
+  function onClick() {
+    console.log('Click');
+  }
 }
 
 Header.defaultProps = {

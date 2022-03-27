@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export default function Button({ title }) {
-  return <Btn>{title}</Btn>;
+export default function Button({ title, color, onClick }) {
+  return <Btn onClick={onClick} color={color}>{title}</Btn>;
 }
 
 Button.defaultProps = {
@@ -10,7 +10,7 @@ Button.defaultProps = {
 
 const Btn = styled.button`
   display: inline-block;
-  background: #000;
+  background: ${props => props.color || '#000'};
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -20,4 +20,13 @@ const Btn = styled.button`
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+
 `;
